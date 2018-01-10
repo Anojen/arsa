@@ -1,0 +1,8 @@
+.refresh-link {
+    color: rgba(255,255,255,.5) !important;
+    cursor: pointer;
+}
+
+.refresh-link:hover{
+    color: rgba(255,255,255,.75) !important;
+}

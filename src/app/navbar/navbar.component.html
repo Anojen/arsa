@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">HomeMatic</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item" *ngIf="isLoggedOut()">
+                <a class="nav-link" href="/dashboard">Übersicht</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedOut()">
+                <a class="nav-link" href="/log">Log</a>
+            </li>
+        </ul>
+        <li class="form-inline">
+            <a class="refresh-link" (click)="refresh()">REFRESH</a>
+        </li>
+        <li class="form-inline ml-4" *ngIf="isLoggedOut()">
+            <a class="refresh-link" (click)="logout()">LOGOUT</a>
+        </li>
+    </div>
+</nav>

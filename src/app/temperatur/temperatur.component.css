@@ -1,0 +1,50 @@
+.stats-icon {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.input-number, .item-row{
+    text-align: center;
+}
+
+.input-number{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.btn-number{
+    height: 5rem;
+    width: 5rem;
+}
+
+.plus{
+    background: linear-gradient(60deg,#6dc271,#43a047);
+    border: none;
+}
+
+.plus:active{
+    background: linear-gradient(60deg,#6dc271,#43a047) !important;
+    border: none;
+}
+
+.minus:active{
+    background: linear-gradient(60deg,#fc7272,#ff0000) !important;
+    border: none;
+}
+
+.minus{
+    background: linear-gradient(60deg,#fc7272,#ff0000);
+    border: none;
+}
+
+.modal-header{
+    margin: 0px !important;
+}
+
+.rowbreak{
+    padding: 20px 0px;
+}

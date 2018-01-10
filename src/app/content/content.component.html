@@ -1,0 +1,154 @@
+<div class="row overview">
+    <div class="col-6">
+        <div class="subwidget">
+            <div class="title">
+                Steckdosen
+            </div>
+            <div class="content">
+                <div class="row rowbreak">
+                    <div class="col-6">
+                        <div class="stats">
+                            <div [ngClass]="{'d-flex': true, 'justify-content-center': true, 'align-items-center': true,'stats-icon': true, 'stats-icon-green': true, 'stats-icon-red': settings.steckdose_wohnzimmer}" (click)="schalteSteckdose('wohnzimmer');">
+                                <i class="fa fa-plug" aria-hidden="true"></i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Wohnzimmer</div>
+                                <div class="stats-value">
+                                    {{settings.steckdose_wohnzimmer ? 'Aus' : 'An'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stats">
+                            <div [ngClass]="{'d-flex': true, 'justify-content-center': true, 'align-items-center': true,'stats-icon': true, 'stats-icon-green': true, 'stats-icon-red': settings.steckdose_kueche}" (click)="schalteSteckdose('kueche');">
+                                <i class="fa fa-plug" aria-hidden="true"></i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Küche</div>
+                                <div class="stats-value">
+                                    {{settings.steckdose_kueche ? 'Aus' : 'An'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="stats">
+                            <div [ngClass]="{'d-flex': true, 'justify-content-center': true, 'align-items-center': true,'stats-icon': true, 'stats-icon-green': true, 'stats-icon-red': settings.steckdose_schlafzimmer}"  (click)="schalteSteckdose('schlafzimmer');">
+                                <i class="fa fa-plug" aria-hidden="true"></i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Schlafzimmer</div>
+                                <div class="stats-value">
+                                    {{settings.steckdose_schlafzimmer ? 'Aus' : 'An'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stats">
+                            <div [ngClass]="{'d-flex': true, 'justify-content-center': true, 'align-items-center': true,'stats-icon': true, 'stats-icon-green': true, 'stats-icon-red': settings.steckdose_unbekannt}">
+                                <i class="fa fa-plug" aria-hidden="true"></i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Unbekannt</div>
+                                <div class="stats-value">
+                                    {{settings.steckdose_unbekannt ? 'Aus' : 'An'}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subwidget">
+            <div class="title">
+                Wohnungstür
+            </div>
+            <div class="content stats">
+                    <div [ngClass]="{'d-flex': true, 'justify-content-center': true, 'align-items-center': true,'stats-icon': true, 'stats-icon-green': true, 'stats-icon-red': settings.wohnungstuer}" (click)="schliesseWohnungsTuer();">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="p-2 d-flex flex-column align-items-center stats-body">
+                    <div class="stats-info">Wohnungstür</div>
+                    <div class="stats-value">
+                        {{settings.wohnungstuer ? 'geschlossen' : 'offen'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="subwidget">
+            <div class="title">
+                Temperatur
+            </div>
+            <div class="content">
+                <div class="row rowbreak">
+                    <div class="col-6">
+                        <div class="stats">
+                            <div class="d-flex justify-content-center align-items-center stats-icon stats-icon-blue" (click)="oeffneTemperaturModal('wohnzimmer');">
+                                <i aria-hidden="true">{{settings.temperatur_wohnzimmer}}°</i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Wohnzimmer</div>
+                                <div class="stats-value">+ {{settings.setpoint_wohnzimmer}}°</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stats">
+                            <div class="d-flex justify-content-center align-items-center stats-icon stats-icon-blue" (click)="oeffneTemperaturModal('schlafzimmer');">
+                                <i aria-hidden="true">{{settings.temperatur_schlafzimmer}}°</i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Schlafzimmer</div>
+                                <div class="stats-value">+ {{settings.setpoint_schlafzimmer}}°</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="stats">
+                            <div class="d-flex justify-content-center align-items-center stats-icon stats-icon-blue" (click)="oeffneTemperaturModal('kueche');">
+                                <i aria-hidden="true">{{settings.temperatur_kueche}}°</i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Küche</div>
+                                <div class="stats-value">+ {{settings.setpoint_kueche}}°</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stats">
+                            <div class="d-flex justify-content-center align-items-center stats-icon stats-icon-blue" (click)="oeffneTemperaturModal('bad');">
+                                <i aria-hidden="true">{{settings.temperatur_bad}}°</i>
+                            </div>
+                            <div class="p-2 d-flex flex-column align-items-center stats-body">
+                                <div class="stats-info">Bad</div>
+                                <div class="stats-value">+ {{settings.setpoint_bad}}°</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subwidget">
+            <div class="title">
+                Haustür
+            </div>
+            <div class="content stats">
+                <div class="d-flex justify-content-center align-items-center stats-icon stats-icon-blue" (click)="oeffneHaustuer();">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="p-2 d-flex flex-column align-items-center stats-body">
+                    <div class="stats-info">Haustür</div>
+                    <div class="stats-value">öffnen</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

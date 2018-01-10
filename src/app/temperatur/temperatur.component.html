@@ -1,0 +1,29 @@
+<div class="modal-header" mat-dialog-title>
+    <button type="button" class="close" mat-dialog-close tabindex="-1">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    <h4 class="modal-title">Teperatur einstellen</h4>
+</div>
+
+<div class="modal-body" mat-dialog-content>
+    <div class='row item-row rowbreak'>
+        <div class='col-4 item'>
+            <button type='button' class='btn btn-dark btn-number minus' data-type='minus' (click)="changeTemperatur('wohnzimmer', 'minus')">
+                <i class='fa fa-minus' aria-hidden='true'></i>
+            </button>
+        </div>
+        <div class='col-4'>
+            <input type='text' class='form-control input-number' name='baddegree' value={{temperatur}} min='1' max='35'>
+        </div>
+        <div class='col-4 item'>
+            <button type='button' class='btn btn-dark btn-number plus' data-type='plus' (click)="changeTemperatur('wohnzimmer', 'plus')">
+                <i class='fa fa-plus' aria-hidden='true'></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer" mat-dialog-actions>
+    <button class="btn btn-secondary" mat-button mat-dialog-close>Abbruch</button>
+    <button class="btn btn-primary" mat-button (click)="saveTemperatur()">Übernehmen</button>
+</div>
