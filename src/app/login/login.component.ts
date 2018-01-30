@@ -16,9 +16,9 @@ export class LoginComponent implements OnInit {
     error: { name: string, message: string } = { name: '', message: '' };
 
     constructor(private router: Router, private appcomponent: AppComponent) {
-        if (localStorage.getItem("sessiontoken") !== "null") {
-            this.router.navigateByUrl('/dashboard');
-        }
+        // if (localStorage.getItem("sessiontoken") !== "null") {
+        //     this.router.navigateByUrl('/dashboard');
+        // }
     }
 
     ngOnInit() {

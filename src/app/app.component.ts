@@ -12,6 +12,9 @@ export class AppComponent{
     title = 'app';
 
     constructor(private router: Router){
+        console.log("###", localStorage.getItem("sessiontoken"));
+
+        
         // Observable.interval(2000 * 60).subscribe(x => {
         //     localStorage.setItem('sessiontoken', "null");
         //     this.router.navigateByUrl('/login');
